@@ -1,0 +1,79 @@
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: transparent;
+  color: white;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.logo {
+  height: 10px;
+  /* width: 100px; */
+}
+
+.app-name {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 2px solid white; */
+}
+
+.sign-out {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 20px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 17px;
+  transition: all 0.2s ease;
+}
+
+.sign-out:hover {
+  background-color: white;
+  color: black;
+}
+
+/* 🔁 Responsive */
+@media (max-width: 600px) {
+  .app-name {
+    font-size: 1rem;
+  }
+
+  .sign-out {
+    padding: 4px 10px;
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    height: 35px;
+    width: 35px;
+  }
+}
