@@ -1,21 +1,25 @@
+/* Fix hero alignment and prevent it from going under the header */
 .hero {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* changed from center */
   text-align: center;
-  position: relative;
   height: 100vh;
   overflow: hidden;
-  padding-top: 80px; /* ✅ Compensate for fixed header */
+  padding-top: 80px; /* assumes header height is 80px */
+  box-sizing: border-box;
 }
 
+/* Ensure content fits below header and doesn't overflow */
 .hero-content {
   width: 100%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 80px); /* ✅ Ensure it fits below the header */
-  padding-bottom: 70px; /* Space for input field */
+  height: calc(100vh - 80px); /* adjusted to leave space for header */
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .hero-animation {
