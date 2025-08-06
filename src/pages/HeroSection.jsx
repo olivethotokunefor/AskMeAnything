@@ -55,7 +55,7 @@ setIsTyping(true);
   return (
     <section className="hero">
       <div className="hero-content">
-        {messages.length === 0 && (
+        {messages.length === 0 ? (
           <>
             <video src={animation} autoPlay loop muted className="hero-animation" />
             <h1 className="hero-title">Ask Me Anything</h1>
@@ -63,22 +63,22 @@ setIsTyping(true);
               I'm your friendly AI assistant. Curious about science, need a recipe, or just want a joke? Type it in below!
             </p>
           </>
+        ) : (
+          <div className="chat-box" ref={chatRef}>
+            {messages.map((msg, index) => (
+              <div key={index} className={`chat ${msg.role === 'user' ? 'user' : 'ai'}`}>
+                {msg.content}
+              </div>
+            ))}
+            {isTyping && (
+              <div className="chat ai typing-indicator">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </div>
+            )}
+          </div>
         )}
-
-        <div className="chat-box" ref={chatRef}>
-  {messages.map((msg, index) => (
-    <div key={index} className={`chat ${msg.role === 'user' ? 'user' : 'ai'}`}>
-      {msg.content}
-    </div>
-  ))}
-  {isTyping && (
-    <div className="chat ai typing-indicator">
-      <span className="dot"></span>
-      <span className="dot"></span>
-      <span className="dot"></span>
-    </div>
-  )}
-</div>
 
         <div className="input-wrapper">
           <input

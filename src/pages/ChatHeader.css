@@ -1,16 +1,18 @@
 .chat-header {
-  position: absolute; /* ✅ Absolute so it doesn't consume space */
+  position: fixed; /* Changed from absolute to fixed for better positioning */
   top: 0;
   left: 0;
   width: 100%;
+  height: 90px; /* increased from 80px */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 20px 30px; /* increased padding from 15px */
   color: white;
   backdrop-filter: blur(10px);
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
 .header-left {
@@ -20,8 +22,8 @@
 }
 
 .logo {
-  height: 40px;
-  width: auto;
+  height: 10px; /* reduced from 40px */
+  /* width: 70PX; */
 }
 
 .app-name {
@@ -62,25 +64,55 @@
 }
 
 @media (max-width: 600px) {
+  .chat-header {
+    height: 70px; /* smaller height on mobile */
+    padding: 15px 20px; /* reduced padding on mobile */
+  }
+
   .app-name {
-    font-size: 1rem;
+    font-size: 1.2rem; /* increased from 1rem */
   }
 
   .sign-out {
-    padding: 4px 10px;
-    font-size: 0.85rem;
+    padding: 8px 15px; /* increased from 4px 10px */
+    font-size: 0.9rem; /* increased from 0.85rem */
   }
 
   .logo {
-    height: 30px;
+    height: 28px; /* increased from 25px */
   }
 
   .header-right {
-    gap: 10px;
+    gap: 15px; /* increased from 10px */
   }
 
   .profile-pic {
-    width: 30px;
-    height: 30px;
+    width: 32px; /* increased from 30px */
+    height: 32px; /* increased from 30px */
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-header {
+    height: 65px; /* even smaller for very small screens */
+    padding: 12px 15px; /* further reduced padding */
+  }
+
+  .app-name {
+    font-size: 1rem; /* smaller for very small screens */
+  }
+
+  .sign-out {
+    padding: 6px 12px; /* smaller padding for very small screens */
+    font-size: 0.8rem; /* smaller font for very small screens */
+  }
+
+  .logo {
+    height: 25px; /* smaller for very small screens */
+  }
+
+  .profile-pic {
+    width: 28px; /* smaller for very small screens */
+    height: 28px; /* smaller for very small screens */
   }
 }
