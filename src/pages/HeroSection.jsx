@@ -53,7 +53,7 @@ setIsTyping(true);
   }, [messages]);
 
   return (
-    <section className="hero">
+    <section className="hero"> 
       <div className="hero-content">
         {messages.length === 0 ? (
           <>
