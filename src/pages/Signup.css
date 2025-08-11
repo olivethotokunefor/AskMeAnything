@@ -71,6 +71,39 @@
   margin-bottom: 20px;
   animation: fadeInUp 0.5s ease-out;
 }
+.google-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  color: #444;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.google-signin:hover:enabled {
+  background-color: #f7f7f7;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.google-signin:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+}
+
 
 .inputs {
   width: 100%;

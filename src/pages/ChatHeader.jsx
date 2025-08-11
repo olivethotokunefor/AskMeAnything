@@ -1,9 +1,22 @@
 import React from 'react';
 import './ChatHeader.css';
-import logo from '../assets/ai.png'; // your AI logo
-import profile from '../assets/user3.png'; // default profile pic
+import logo from '../assets/ai.png';
+import profile from '../assets/user3.png';
+import { doSignOut } from '../keys/auth';
+import { useNavigate } from 'react-router-dom';
 
 const ChatHeader = () => {
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    try {
+      await doSignOut();
+      navigate('/'); // or '/login' depending on your routes
+    } catch (error) {
+      console.error('Sign out failed:', error);
+    }
+  };
+
   return (
     <header className="chat-header">
       <div className="header-left">
@@ -12,7 +25,9 @@ const ChatHeader = () => {
       </div>
       <div className="header-right">
         <img src={profile} alt="User Profile" className="profile-pic" />
-        <button className="sign-out">Sign Out</button>
+        <button className="sign-out" onClick={handleSignOut}>
+          Sign Out
+        </button>
       </div>
     </header>
   );
