@@ -15,9 +15,7 @@ import {
 } from 'firebase/firestore';
 import { db } from '../keys/FirebaseAuth';
 
-const genAI = new GoogleGenAI({
-  apiKey: 'AIzaSyBue1UpnEQgClw3YMQWKwyu6vZDN2xWf4E',
-});
+
 
 // 🎯 Define personalities for each category
 // 🎯 Define personalities for each category
