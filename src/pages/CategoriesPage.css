@@ -1,0 +1,144 @@
+/* ✅ Import a premium modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+.categories-page {
+  position: relative;
+  padding: 60px 40px;
+  height: 100vh; /* fixed height */
+  background-image: url("../assets/dark4.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto; /* ✅ scrolling inside container */
+}
+/* For Chrome, Edge, Safari */
+.categories-page::-webkit-scrollbar {
+  width: 10px;
+}
+
+.categories-page::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.categories-page::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffff, #fff);
+  border-radius: 10px;
+  border: 2px solid rgba(0,0,0,0.3);
+}
+
+.categories-page::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fff, #fff);
+}
+
+/* For Firefox */
+.categories-page {
+  scrollbar-width: thin;
+  scrollbar-color: #0ec8a9 rgba(255, 255, 255, 0.05);
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  z-index: 0;
+}
+
+.page-title, 
+.page-subtitle {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+}
+
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+  margin-top: 50px;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  opacity: 0.85;
+}
+
+.categories-grid {
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.category-card {
+  position: relative;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.category-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px;
+}
+
+.category-overlay h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.category-overlay p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.category-overlay button {
+  background: #32BDA6;
+  border: none;
+  padding: 12px 18px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.category-overlay button:hover {
+  transform: scale(1.05);
+  background: #131222;
+}
+
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}

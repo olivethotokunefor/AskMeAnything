@@ -48,7 +48,7 @@ const Signup = () => {
   };
 
   if (userLoggedIn) {
-    return <Navigate to="/home" replace />;
+    return <Navigate to="/categories" replace />;
   }
 
   return (

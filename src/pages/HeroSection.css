@@ -74,11 +74,12 @@
 
 /* ✅ Styled scrollbars */
 .chat-box::-webkit-scrollbar {
-  width: 8px;
+  width: 2px;
+  /* color: blue; */
 }
 
 .chat-box::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(166, 158, 237, 0.4);
   border-radius: 8px;
 }
 

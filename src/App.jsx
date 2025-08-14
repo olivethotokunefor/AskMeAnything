@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import CategoriesPage from './pages/CategoriesPage';
 import { AuthProvider } from './contexts/authContext';
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/home" element={<Home />} />
-        <Route path='/login' element={<Login />}></Route>
+        <Route path='/login' element={<Login />} />
+        <Route path="/categories" element={<CategoriesPage />} />
       </Routes>
     </Router>
     </AuthProvider>
